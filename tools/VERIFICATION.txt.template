@@ -1,4 +1,4 @@
-VERIFICATION
+﻿VERIFICATION
 Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
  
@@ -7,15 +7,15 @@ website. The Releases page is at the following URL:
 https://openrgb.org/releases.html
 
 For convenience, this is a direct URL to the relevant asset:
-https://openrgb.org/releases/release_candidate_1.0rc1/OpenRGB_1.0rc1_Windows_64_1fbacde.msi
+%installerUrl%
 
-The following PowerShell command will print a calculated SHA256 hash:
+The following PowerShell command will print a calculated %checksumType% hash:
 
-    (Get-FileHash -Path OpenRGB_1.0rc1_Windows_64_1fbacde.msi -Algorithm SHA256).Hash
+    (Get-FileHash -Path %installerFileName% -Algorithm %checksumType%).Hash
 
 This command should be executed against an independently downloaded installer, as well as the copy
 distributed with the package. Both hash values should be identical. A matching hash value should
 confirm that no corruption or tampering has occurred during this package's generation process.
 
-For reference, the following SHA256 hash was calculated during the package's automated creation:
-3801B194C5B4A2C7B9A0F4CF40BF73DCA38C07EF817402A060F447A3CA746C76
+For reference, the following %checksumType% hash was calculated during the package's automated creation:
+%checksumValue%
