@@ -62,7 +62,7 @@ function Get-DownloadUri($RelevantReleaseInfo, [semver] $Version) {
 
 function Get-LatestStableVersionInfo {
     $releasesInfo = Invoke-RestMethod -Uri $gitLabReleasesUri -UserAgent $userAgent -UseBasicParsing
-    $latestReleaseInfo = $releasesInfo | Where-Object { $_.name -match 'release_\d\.\d+' } | Select-Object -First 1
+    $latestReleaseInfo = $releasesInfo | Where-Object { $_.name -match 'OpenRGB Release \d\.\d+' } | Select-Object -First 1
     $relevantReleaseInfo = Get-RelevantReleaseInfo -ReleaseInfo $latestReleaseInfo
 
     return @{
