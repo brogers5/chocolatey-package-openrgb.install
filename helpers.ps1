@@ -57,7 +57,7 @@ function Get-DownloadUri($RelevantReleaseInfo, [semver] $Version) {
         $RelevantReleaseInfo = Get-RelevantReleaseInfo -ReleaseUri $releaseUri
     }
 
-    return "https://openrgb.org/releases/$($RelevantReleaseInfo.TagName)/OpenRGB_$($RelevantReleaseInfo.RawVersion)_Windows_64_$($RelevantReleaseInfo.CommitShortId).msi"
+    return "https://codeberg.org/OpenRGB/OpenRGB/releases/download/$($RelevantReleaseInfo.TagName)/OpenRGB_$($RelevantReleaseInfo.RawVersion)_Windows_64_$($RelevantReleaseInfo.CommitShortId).msi"
 }
 
 function Get-LatestStableVersionInfo {
