@@ -10,9 +10,10 @@ $softwareRepo = 'CalcProgrammer1/OpenRGB'
 
 function global:au_GetLatest {
     $streams = [ordered] @{
-        ReleaseCandidate = Get-LatestReleaseCandidateVersionInfo
+        ReleaseCandidateWinRing0 = Get-LatestReleaseCandidateVersionInfo -WinRing0
+        ReleaseCandidate         = Get-LatestReleaseCandidateVersionInfo
         #Temporarily disabled, since the latest Stable release currently doesn't have an installer
-        # Stable           = Get-LatestStableVersionInfo
+        # Stable                   = Get-LatestStableVersionInfo
     }
 
     return @{ Streams = $streams }
