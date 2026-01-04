@@ -36,6 +36,10 @@ else {
   }
 }
 
-Write-Warning 'OpenRGB builds containing WinRing0 have been deprecated!'
-Write-Warning 'For more details, please review: https://gitlab.com/CalcProgrammer1/OpenRGB/-/issues/2227'
-Write-Warning 'It is strongly recommended to transition to a PawnIO-compatible build at your earliest convenience!'
+if (!$pp.DontCheckForPawnIO) {
+  $pawnIoInstallLocation = Get-AppInstallLocation -AppNamePattern 'PawnIO'
+  if ($null -eq $pawnIoInstallLocation) {
+    Write-Warning 'OpenRGB has recently switched from using WinRing0 to PawnIO, which may require a separate installation.'
+    Write-Warning 'If your devices require I2C or SMBus access, please install PawnIO prior to using OpenRGB.'
+  }
+}
