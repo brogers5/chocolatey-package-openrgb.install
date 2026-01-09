@@ -27,7 +27,7 @@ As of 1.0.0rc2, OpenRGB now depends on [PawnIO](https://community.chocolatey.org
 
 If this behavior is undesired, OpenRGB's installer can optionally create and start a service application to enable OpenRGB to work correctly without elevation. Users can opt into this via the installer's `OpenRGBRegisterService` feature:
 
-```console
+```shell
 choco install openrgb.install --install-arguments="'ADDLOCAL=OpenRGBApplication,OpenRGBRegisterService'"
 ```
 
