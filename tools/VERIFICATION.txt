@@ -7,15 +7,15 @@ website. The Releases page is at the following URL:
 https://openrgb.org/releases.html
 
 For convenience, this is a direct URL to the relevant asset:
-https://codeberg.org/OpenRGB/OpenRGB/releases/download/release_candidate_1.0rc2/OpenRGB_1.0rc2_Windows_64_0fca93e.msi
+https://codeberg.org/OpenRGB/OpenRGB/releases/download/release_candidate_1.0rc3/OpenRGB_1.0rc3_Windows_64_6fbcf62.msi
 
 The following PowerShell command will print a calculated SHA256 hash:
 
-    (Get-FileHash -Path OpenRGB_1.0rc2_Windows_64_0fca93e.msi -Algorithm SHA256).Hash
+    (Get-FileHash -Path OpenRGB_1.0rc3_Windows_64_6fbcf62.msi -Algorithm SHA256).Hash
 
 This command should be executed against an independently downloaded installer, as well as the copy
 distributed with the package. Both hash values should be identical. A matching hash value should
 confirm that no corruption or tampering has occurred during this package's generation process.
 
 For reference, the following SHA256 hash was calculated during the package's automated creation:
-6C656FCA447B9BC0F360F13EC67691D685E35455EE7933E30ED5D09F8F06CF8F
+C34BA13660FD3EF34C4C249A6A464704F8ABA72C4C14C6BFBE39F6ABABE1AAB5

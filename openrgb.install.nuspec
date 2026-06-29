@@ -3,17 +3,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>openrgb.install</id>
-    <version>1.0.0-rc2</version>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-openrgb.install/tree/v1.0.0-rc2</packageSourceUrl>
+    <version>1.0.0-rc3</version>
+    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-openrgb.install/tree/v1.0.0-rc3</packageSourceUrl>
     <owners>sublym0nal</owners>
     <title>OpenRGB (Install)</title>
     <authors>Adam Honse (CalcProgrammer1)</authors>
     <projectUrl>https://openrgb.org/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-openrgb.install@4559dfe2a59c5e2a7df1cb69957ab8e5125d4401/openrgb.install.png</iconUrl>
     <copyright>Copyright (C) 2026 Adam Honse</copyright>
-    <licenseUrl>https://gitlab.com/CalcProgrammer1/OpenRGB/-/blob/release_candidate_1.0rc2/LICENSE</licenseUrl>
+    <licenseUrl>https://gitlab.com/CalcProgrammer1/OpenRGB/-/blob/release_candidate_1.0rc3/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <projectSourceUrl>https://gitlab.com/CalcProgrammer1/OpenRGB/-/tree/release_candidate_1.0rc2</projectSourceUrl>
+    <projectSourceUrl>https://gitlab.com/CalcProgrammer1/OpenRGB/-/tree/release_candidate_1.0rc3</projectSourceUrl>
     <docsUrl>https://gitlab.com/OpenRGBDevelopers/OpenRGB-Wiki/-/blob/stable/home.md</docsUrl>
     <mailingListUrl>https://lemmy.ml/c/OpenRGB</mailingListUrl>
     <bugTrackerUrl>https://gitlab.com/CalcProgrammer1/OpenRGB/-/issues</bugTrackerUrl>
@@ -48,7 +48,7 @@ As of 1.0.0rc2, OpenRGB now depends on [PawnIO](https://community.chocolatey.org
 
 If this behavior is undesired, OpenRGB's installer can optionally create and start a service application to enable OpenRGB to work correctly without elevation. Users can opt into this via the installer's `OpenRGBRegisterService` feature:
 
-```console
+```shell
 choco install openrgb.install --install-arguments="'ADDLOCAL=OpenRGBApplication,OpenRGBRegisterService'"
 ```
 
@@ -66,7 +66,7 @@ For future upgrade operations, consider opting into Chocolatey's `useRememberedA
 choco feature enable --name="'useRememberedArgumentsForUpgrades'"
 ```
 ]]></description>
-    <releaseNotes>https://codeberg.org/OpenRGB/OpenRGB/releases/tag/release_candidate_1.0rc2</releaseNotes>
+    <releaseNotes>https://codeberg.org/OpenRGB/OpenRGB/releases/tag/release_candidate_1.0rc3</releaseNotes>
     <dependencies>
       <dependency id="vcredist140" version="14.22.27821" />
       <dependency id="chocolatey-core.extension" version="1.0.0" />
