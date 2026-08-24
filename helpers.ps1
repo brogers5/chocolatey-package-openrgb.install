@@ -50,9 +50,13 @@ function Get-RelevantReleaseInfo($ReleaseInfo, [string] $ReleaseUri) {
 
 function Get-DownloadUri($RelevantReleaseInfo, [semver] $Version) {
     if ($null -eq $RelevantReleaseInfo -and $null -ne $Version) {
-        #TODO: Map any package fix versions to underlying software version
+        #TODO: Add entries for any package version deviations from the software version (e.g. software versions not complying with SemVer1, package fix versions)
+        switch ($Version) {
+            '1.0.0-rc3-1' { $softwareVersion = '1.0.0-rc3.1' }
+            default { $softwareVersion = $Version }
+        }
 
-        $tagName = Get-TagName -Version $Version
+        $tagName = Get-TagName -Version $softwareVersion
         $releaseUri = Get-SpecificReleaseInfoUri -TagName $tagName
         $RelevantReleaseInfo = Get-RelevantReleaseInfo -ReleaseUri $releaseUri
     }
@@ -73,6 +77,14 @@ function Get-LatestStableVersionInfo {
     }
 }
 
+function ConvertTo-SemVerV1CompliantVersion([string] $Version) {
+    $tokens = $Version -split '-'
+    $result = $tokens[0] + '-'
+    $result += $tokens[1] -replace '\.', '-'
+
+    return $result
+}
+
 function Get-LatestReleaseCandidateVersionInfo([switch] $WinRing0) {
     $releasesInfo = Invoke-RestMethod -Uri $gitLabReleasesUri -UserAgent $userAgent -UseBasicParsing
 
@@ -90,6 +102,6 @@ function Get-LatestReleaseCandidateVersionInfo([switch] $WinRing0) {
         SoftwareVersion = $relevantReleaseInfo.RawVersion
         Tag             = $relevantReleaseInfo.TagName
         Url64           = Get-DownloadUri -RelevantReleaseInfo $relevantReleaseInfo
-        Version         = $relevantReleaseInfo.Version  #This may change if building a package fix version
+        Version         = ConvertTo-SemVerV1CompliantVersion -Version $relevantReleaseInfo.Version.ToString()  #This may change if building a package fix version
     }
 }
