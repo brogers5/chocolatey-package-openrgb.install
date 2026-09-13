@@ -3,7 +3,7 @@
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 $softwareNamePattern = 'OpenRGB'
 
-$fileName = 'OpenRGB_1.0rc3.1_Windows_64_5e81e26.msi'
+$fileName = 'OpenRGB_1.0_Windows_64_81bbe18.msi'
 $filePath = Join-Path -Path $toolsDir -ChildPath $fileName
 
 $packageArgs = @{
